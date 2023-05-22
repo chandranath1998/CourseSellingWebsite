@@ -8,7 +8,7 @@ aws.config.update({
     region: "ap-south-1"
 })
 
-let uploadFile = async (file) => {
+let uploadFile = async (video) => {
     return new Promise(function (resolve, reject) {
         // this function will upload file to aws and return the link
         let s3 = new aws.S3({ apiVersion: '2006-03-01' }); // we will be using the s3 service of aws
@@ -16,8 +16,8 @@ let uploadFile = async (file) => {
         var uploadParams = {
             ACL: "public-read",
             Bucket: "classroom-training-bucket",  //HERE
-            Key: "abc/" + file.originalname, //HERE 
-            Body: file.buffer
+            Key: "abc/" + video.originalname, //HERE 
+            Body: video.buffer
         }
 
 

@@ -27,7 +27,7 @@ const authentication = async function (req, res,next) {
 let checkadmin = async function (req, res, next) {
     try {
         let userId = req.token.id;
-        console.log(userId);
+        // console.log(userId);
 
         let user = await userModel.findById(userId);
 
