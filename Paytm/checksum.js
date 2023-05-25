@@ -31,7 +31,6 @@ function paramsToString(params, mandatoryflag) {
   return data;
 }
 
-
 function genchecksum(params, key, cb) {
   var data = paramsToString(params);
 crypt.gen_salt(4, function (err, salt) {

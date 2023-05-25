@@ -51,7 +51,7 @@ const login = async function (req, res) {
             id: userId._id,
             email: email,
             password: userId.password
-        }, "student");
+        }, process.env.SECRET_KEY);
 
         res.setHeader("x-api-key", token);
         res.status(200).send({ status: true, message: "token created successfully", data: token });
